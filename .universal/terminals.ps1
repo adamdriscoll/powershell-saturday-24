@@ -1,0 +1,1 @@
+﻿New-PSUTerminal -Name "PowerShell 7 Terminal" -Description "A PowerShell 7 terminal. " -Environment "PowerShell 7" -KeepHistory

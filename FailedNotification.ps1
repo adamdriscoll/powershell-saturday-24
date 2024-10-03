@@ -1,0 +1,1 @@
+﻿New-BurntToastNotification -Text "Job $UAJobID has failed!","It was running script $($Job.ScriptFullPath)"

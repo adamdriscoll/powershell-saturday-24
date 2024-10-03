@@ -1,0 +1,1 @@
+﻿New-PSUTrigger -Name "Trigger" -EventType "JobFailed" -TriggerScript "FailedNotification.ps1"

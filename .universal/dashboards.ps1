@@ -1,0 +1,1 @@
+﻿New-PSUApp -Name "Readme" -FilePath "dashboards\Readme\Readme.ps1" -BaseUrl "/" -AutoDeploy -Description "An app to display a readme.md. "

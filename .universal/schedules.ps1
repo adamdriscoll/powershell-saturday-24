@@ -1,0 +1,1 @@
+﻿New-PSUSchedule -Cron "0 * * * *" -Script "Cache.ps1" -TimeZone "America/Chicago" -Name "Cache Child Items"
