@@ -4,3 +4,5 @@
     Write-Progress -Activity "Processing" -PercentComplete $_
     Start-Sleep -Milliseconds 100
 }
+
+Wait-Debugger
