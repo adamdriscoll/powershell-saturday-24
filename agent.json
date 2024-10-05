@@ -1,0 +1,8 @@
+{
+    "Configurations": [
+        {
+            "Url": "http://localhost:5000",
+            "Hub": "Linux"
+        }
+    ]
+}
