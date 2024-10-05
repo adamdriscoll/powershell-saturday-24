@@ -22,4 +22,20 @@ Invoke-RestMethod http://localhost:5000/api/process -Body (@{ Name = "Notepad"} 
 #>
 
     Start-Process $Name -PassThru | Select-Object Name, Id
-} -Authentication -Role @('Administrator')
+} -Authentication -Role @('Administrator') 
+New-PSUEndpoint -Url "/api/image/flip" -Description "Flips an image. " -Method @('PUT') -Endpoint {
+    <#
+    Invoke-WebRequest http://localhost:5000/api/image/flip -InFile 'C:\ProgramData\UniversalAutomation\Repository\powershell.png' -Method PUT -OutFile "$($ENV:USERPROFILE)\OneDrive\Desktop\shellpower.png"
+#>
+
+    $Stream = [System.IO.MemoryStream]::new($Data)
+    $Image = [System.Drawing.Image]::FromStream($Stream)
+
+    $Image.RotateFlip('RotateNoneFlipY')
+    $NewStream = [System.IO.MemoryStream]::new()
+    $Image.Save($NewStream, 'Png')
+
+    #$NewStream.Length
+
+    New-PSUApiResponse -ContentType 'image/png' -Data ($NewStream.ToArray())
+}
